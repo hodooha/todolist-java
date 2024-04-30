@@ -89,12 +89,13 @@ public class View {
                 con.taskCheck(task); // DB에서 task의 완료여부 변경
                 if (task.getIsComplete()) {
                     flow.setBackground(Color.gray); // task 완료되었으면 회색
-                    f.repaint();
-                    f.revalidate();
+//                    f.revalidate();
+//                    f.repaint();
+
                 } else {
                     flow.setBackground(Color.white); // task 완료 안되었으면 기본색(흰색)
-                    f.repaint();
-                    f.revalidate();
+//                    f.revalidate();
+//                    f.repaint();
                 }
             }
         });
@@ -106,8 +107,8 @@ public class View {
             public void actionPerformed(ActionEvent e) {
                 con.deleteTask(task); // DB에서 task 삭제
                 taskP.remove(flow);
-                f.repaint();
                 f.revalidate();
+                f.repaint();
             }
         });
         flow.add(taskField);
@@ -115,8 +116,8 @@ public class View {
         flow.add(deleteBtn);
         taskP.add(flow);
         contentP.add(taskP);
-        f.repaint();
         f.revalidate();
+        f.repaint();
     }
 }
 
